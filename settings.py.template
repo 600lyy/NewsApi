@@ -1,0 +1,20 @@
+from peewee import PostgresqlDatabase
+import logging
+
+
+DB_NAME = 'PRODUCTION_DB_NAME'
+USERNAME = 'PRODUCTION_DB_USER'
+PASSWORD = 'PRODUCTION_DB_PW'
+HOST = 'PRODUCTION_DB_HOST'
+
+DB = PostgresqlDatabase(DB_NAME, user=USERNAME, password=PASSWORD, host=HOST, autocommit=True, autorollback=True)
+
+SETTINGS = {
+  'DB' : DB,
+  'JSON_API_SERVER_HOST' : 'http://127.0.0.1',
+  'JSON_API_TOKEN' : '', # Token to filled up 
+  'http_auth' : 'http://user:passwd',
+  'PRODUCTION_FLAG' : False,
+  'LOGGING_LEVEL' : logging.ERROR,
+  'DIFFBOT_API_TOKEN' : '' #  To fill up Diffbot token 
+}

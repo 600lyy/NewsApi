@@ -43,14 +43,7 @@ class Subscription(BaseModel):
 
 
 class Article(BaseModel):
-    """
-    status code:
-        0. The url has not been sent to diffbot
-        1. diffbot failed to retrieve text for the url
-        2. Article has been successfully pushed to the server
-        3. diffbot analysis api returns an "image" type for the url
-        4. diffbot analysis api returns a "video" type for the url
-        5. all other types besides article, image and video
+    """Article Table
     """
     id = PrimaryKeyField()
     article_url = CharField(max_length=200, unique=True)
